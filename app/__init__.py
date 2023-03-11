@@ -1,15 +1,15 @@
 from flask import Flask
 from flask_cors import CORS
-from flask_migrate import Migrate, migrate
-from .api.basic import basic_blueprint
+from flask_migrate import Migrate
+from .api.basic.users import user_blueprint
 from .settings import ma, db
-from .models import basic_user_model
+from .models.user import user_model
 
 
 def create_app():
 	app = Flask(__name__)
 	app.config.from_pyfile("config.py")
-	app.register_blueprint(basic_blueprint)
+	app.register_blueprint(user_blueprint)
 
 	db.init_app(app)
 	ma.init_app(app)
