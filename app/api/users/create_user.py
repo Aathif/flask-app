@@ -1,7 +1,7 @@
 from flask import request
 from marshmallow import ValidationError
 from app.settings import db
-from app.api.basic.users import user_blueprint
+from app.api.users import user_blueprint
 from app.models.user.user_model import User
 from app.schema.user_schema.user_schema import UserSchema
 import hashlib
