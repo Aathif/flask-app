@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from flask_migrate import Migrate
-from .api.basic.users import user_blueprint
+from app.api.users import user_blueprint
 from .settings import ma, db
 from .models.user import user_model
 
